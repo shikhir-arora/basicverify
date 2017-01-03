@@ -1,7 +1,7 @@
-const TOKEN = 'TOKEN HERE';
-const GUILD = 'GUILD ID'; // 
-const ROLE = 'ROLE ID'; // 
-const VERIFY_MESSAGE = 'I agree to the rules and my token is {token}'; //
+const TOKEN = 'TOKEN HERE'; // OAuth2 Bot Token
+const GUILD = 'GUILD ID'; // guild ID
+const ROLE = 'ROLE ID'; // role to assign once verified
+const VERIFY_MESSAGE = 'I agree to the rules and my token is {token}'; // edit this accordingly, leaving {token} 
 
 const Discord = require('discord.js');
 const shortcode = (n) => {
@@ -21,7 +21,7 @@ client.on('guildMemberAdd', (member) => {
   if (member.user.bot || member.guild.id !== GUILD) return;
   const token = shortcode(7);
   console.log(`${member.user.username}#${member.user.discriminator} joined! CODE: "${token}"`);
-  member.send(`TOKEN: \`${token}\``);
+  member.send(`TOKEN: \`${token}\``);  // edit this line to modify the bot's PM to the user
   member.user.token = token;
 });
 
