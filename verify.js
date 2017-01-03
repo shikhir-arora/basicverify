@@ -1,11 +1,9 @@
-// CHANGE THIS STUFF ///////////////////////////////////////////////////////////
 
 const TOKEN = 'TOKEN HERE';
-const GUILD = 'GUILD ID'; // important!
-const ROLE = 'ROLE ID'; // also important!
+const GUILD = 'GUILD ID'; // 
+const ROLE = 'ROLE ID'; // 
 const VERIFY_MESSAGE = ''; // example: 'I agree to the rules and my token is {token}'
 
-// NOT THIS STUFF //////////////////////////////////////////////////////////////
 const Discord = require('discord.js');
 const shortcode = (n) => {
   const possible = 'ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789';
