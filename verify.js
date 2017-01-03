@@ -1,7 +1,7 @@
 const TOKEN = 'TOKEN HERE';
 const GUILD = 'GUILD ID'; // 
 const ROLE = 'ROLE ID'; // 
-const VERIFY_MESSAGE = ''; // example: 'I agree to the rules and my token is {token}'
+const VERIFY_MESSAGE = 'I agree to the rules and my token is {token}'; //
 
 const Discord = require('discord.js');
 const shortcode = (n) => {
