@@ -1,0 +1,12 @@
+{
+  "name": "basicverify",
+  "version": "1.0.0",
+  "description": "Basic verification for Discord",
+  "main": "verify.js",
+  "author": "vlexar",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "github:hydrabolt/discord.js",
+    "erlpack": "github:hammerandchisel/erlpack"
+  }
+}
