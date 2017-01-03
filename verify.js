@@ -1,3 +1,5 @@
+"use_strict"; // project compiled in nodejs v6.0.1 or higher
+
 const TOKEN = 'TOKEN HERE'; // OAuth2 Bot Token
 const GUILD = 'GUILD ID'; // guild ID
 const ROLE = 'ROLE ID'; // role to assign once verified
