@@ -1,4 +1,3 @@
-
 const TOKEN = 'TOKEN HERE';
 const GUILD = 'GUILD ID'; // 
 const ROLE = 'ROLE ID'; // 
