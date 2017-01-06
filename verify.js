@@ -1,4 +1,4 @@
-"use_strict"; // project compiled in nodejs v6.0.1 or higher
+"use_strict"; // project compiled in nodejs v6.1.0 or higher
 
 const TOKEN = 'TOKEN HERE'; // OAuth2 Bot Token
 const GUILD = 'GUILD ID'; // guild ID
