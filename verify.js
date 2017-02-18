@@ -23,14 +23,14 @@ client.on('guildMemberAdd', (member) => {
   if (member.user.bot || member.guild.id !== GUILD) return;
   const token = shortcode(7);
   console.log(`${member.user.username}#${member.user.discriminator} joined! CODE: "${token}"`);
-  member.send(`TOKEN: \`${token}\``);  // edit this line to modify the bot's PM to the user
+  member.send(`Welcome to the server. To verify your account and agree to our rules, type: **I agree to the rules and my token is** \`${token}\` This will verify your account. Thank you!`);  // edit this line to modify the bot's PM to the user with instructions when they first join
   member.user.token = token;
 });
 
 client.on('message', (message) => {
-  if (message.author.bot || message.channel.type !== 'dm' || !message.author.token) return;
+  if (message.author.bot || !message.author.token) return; // reverted requirement that the verify message must be a PM; to change add || message.channel.type !== 'dm'  
   if (message.content !== VERIFY_MESSAGE.replace('{token}', message.author.token)) return;
-  message.channel.send('CORRECT!');
+  message.channel.send('Thank you for verifying your account. Your roles have been updated and you can now view all user channels.'); // edit this to modify what the bot sends to the user when they verify their account 
   const role = client.guilds.get(GUILD).roles.get(ROLE);
   client.guilds.get(GUILD).member(message.author.id).addRole(role).catch(console.error);
 });
