@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Basic verification for Discord",
   "main": "verify.js",
-  "author": "vlexar",
-  "license": "MIT",
+  "author": "vlexar#4872",
+  "license": "Unlicense",
   "dependencies": {
     "discord.js": "github:hydrabolt/discord.js",
     "erlpack": "github:hammerandchisel/erlpack"
