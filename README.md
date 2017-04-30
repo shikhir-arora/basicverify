@@ -9,7 +9,7 @@ GIF: https://i.imgur.com/9N196l2.gif
 
 ## Installation 
 
-This basic, simple - yet very useful verification bot for Discord - built on ![discord.js](https://github.com/hydrabolt/discord.js) 
+This basic, simple - yet very useful verification bot for Discord - built on [discord.js](https://github.com/hydrabolt/discord.js) 
 
 ### Requirements:
 
