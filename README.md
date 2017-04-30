@@ -13,7 +13,7 @@ This basic, simple - yet very useful verification bot for Discord - built on [di
 
 ### Requirements:
 
-> Node.js version v7.0.0+ (to check your node version, you can type  `node --version` - to update Node, use [nvm](http://nvm.sh)
+> Node.js version v7.0.0+ (to check your node version, you can type  `node --version` - to update Node, use [nvm](http://nvm.sh) and `nvm install v7.9.0` which works here (can `nvm install <version>` and `nvm use <version` anytime to switch)
 
 > Git (to clone the repository, which is the easiest way) 
 
@@ -187,7 +187,7 @@ Make sure the node version of pm2 is adequate. It is more than likely fine, but 
 [{
 	"name": "application-name",
 	"exec_interpreter": "node@7.9.0",
-	"script": "verify.js",
+	"script": "verify.js"
 }]
 
 ```
