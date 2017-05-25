@@ -1,0 +1,8 @@
+{
+	"token": "",
+	"guild": "15284208515018240",
+	"role": "15284208515018240",
+	"verifymsg": "I agree to the rules and my token is \`${token}\`",
+	"welcomemsg": "Welcome! Make sure you include instructions on how to type the verifymsg for the user here!",
+	"playing": "Verification..!"	
+}
