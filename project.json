@@ -1,12 +1,15 @@
+
 {
   "name": "basicverify",
-  "version": "1.0.0",
-  "description": "Basic verification for Discord",
+  "version": "1.0.1",
+  "description": "Super basic verification bot for Discord",
   "main": "verify.js",
-  "author": "vlexar#4872",
+  "author": ".vlexar#0001",
   "license": "Unlicense",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
-    "discord.js": "github:hydrabolt/discord.js",
-    "erlpack": "github:hammerandchisel/erlpack"
+    "discord.js": "discordjs/discord.js#stable"
   }
 }

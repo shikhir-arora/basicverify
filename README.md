@@ -1,6 +1,6 @@
 # basicverify
 
-> A simple yet functional [Discord](https://discordapp.com/) verification bot for new members.
+> A simple yet functional [Discord](https://discordapp.com/) verification bot for new members. Please contact `.vlexar#0001` for help setting up this bot!
 
 ## Screenshot In Action 
 ![basicverify](https://images-ext-1.discordapp.net/eyJ1cmwiOiJodHRwczovL2kuaW1ndXIuY29tL1ZNbjB3cE9yLnBuZyJ9.n98IZ1Dd09OjTD74ZOJ3jUDHH9M)
@@ -269,7 +269,7 @@ There's a lot more to tmux, but that's all you need for this if you do decide to
 
 ## Support
 
-You can contact me directly at `shikhir@sarora.io` or on Discord as `vlexar#4782` (ID: 243902693666455553)
+You can contact me directly at `shikhir@sarora.io` or on Discord as `.vlexar#0001` (ID: 243902693666455553)
 
 You can also join my server, which you can find out about here: [execsrvr.xyz](https://www.execsrvr.xyz) and there is an invite link on the right side dropdown menu. 
 
