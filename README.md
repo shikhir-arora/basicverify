@@ -2,22 +2,24 @@
 
 > A simple yet functional [Discord](https://discordapp.com/) verification bot for new members. Please contact `.vlexar#0001` for help setting up this bot!
 
+---
+
 ## Screenshot In Action 
 ![basicverify](https://images-ext-1.discordapp.net/eyJ1cmwiOiJodHRwczovL2kuaW1ndXIuY29tL1ZNbjB3cE9yLnBuZyJ9.n98IZ1Dd09OjTD74ZOJ3jUDHH9M)
 
-GIF: https://i.imgur.com/9N196l2.gif
+> This image is a tad outdated as of Feb 2018, the bot now sends the 'completemsg' with embeds.
 
 ## Installation 
 
-This basic, simple - yet very useful verification bot for Discord - built on [discord.js](https://github.com/hydrabolt/discord.js) 
+This basic, simple - yet very useful verification bot for Discord - built on [discord.js](https://github.com/discordjs/discord.js) 
 
 ### Requirements:
 
-> Node.js version v7.0.0+ (to check your node version, you can type  `node --version` - to update Node, use [nvm](http://nvm.sh) and `nvm install v7.9.0` which works here (can `nvm install <version>` and `nvm use <version` anytime to switch)
+> Node.js version v8.0.0+ (to check your node version, you can type  `node --version` - to update Node, use [nvm](http://nvm.sh) and `nvm install 9.5.0` (latest version as of this edit) which works here (can `nvm install <version>` and `nvm use <version` anytime to switch)
 
-> Git (to clone the repository, which is the easiest way) 
+> Git (to clone the repository, which is the easiest way)
 
-The rest of the dependencies (erlpack, discord.js) are handled through nvm. 
+The rest of the dependencies (just discord.js) are handled through nvm. 
 
 **Any unmet peer dependency warnings after using npm to install can be safely ignored as they are not needed for this project and this is the normal behavior within discord.js**
 
@@ -26,53 +28,57 @@ The rest of the dependencies (erlpack, discord.js) are handled through nvm.
 After you ensure that your Node is the correct version, simply install the dependencies through npm:
 
 ```bash
-$ git clone https://github.com/shikhir-arora/basicverify.git
-$ cd basicverify 
-$ npm install -g 
+
+git clone https://github.com/shikhir-arora/basicverify.git && cd basicverify && npm install -g 
 
 ```
+
+(you can also do each command above separately, these just combine three with `&&`)
+
 
 ### Configuration:
 
-You must edit `verify.js` accordingly. All the information is located in `verify.js` as comments. Specifically, you have to edit:
-
-```
-const TOKEN = ''; // Bot users only. Your OAuth2 bot token will go here (not client ID). Please see the short guide below.
-
-const GUILD = '';  // The ID of the guild this bot will be in. Must be the guild ID, not the guild name.
-
-const ROLE = '';  // The role ID that the bot will set upon successful verification below. The role ID must be given, not the role name. 
-
-const VERIFY_MESSAGE = 'I agree to the rules and my token is {token}'; // leave {token} but edit the message accordingly if you wish, this is the string the members must paste to gain access 
-
-const GAME_PLAYING = 'Playing...'; // Edit this to the game you want shown that the bot will have as its playing status
-```
-
-- See below for token information.
-
-- You need your guild ID, and the role ID for the role the bot will assign to the user once they are verified. These must be ID's, not names. Plenty of guides on how to get those, but if you are self-hosting this you will probably know how already. These go in the `const GUILD ='';` and `const ROLE ='';` strings.
-
-- The `VERIFY_MESSAGE` can be edited, just remember this is what the string will be that the user must type. In the latter part of `verify.js`, there will be a `member.send(`Stuff here...`);` which I mention at the top of the file in a comment with instructions: 
+> (1) You must edit `verify.js` accordingly. All the message strings are consts in `verify.js` . Specifically, you have to edit:
 
 ```js
 
-/**
-The following strings can all be edited very easily. 
-Specifically, lines 37-45 contains our implementation of the messages.
-These are fully flexible and can be edited to whatever you wish to accomplish with the bot. :-)
-The use case here is just an example and can act as a boilerplate for some.
-**/
+const welcomemsg = ``
+const verifymsg = ''
+const completemsg = ``
 
 ```
-(this can be seen in the file, and makes a lot more sense with that open)
 
-- The lines mentioned at 37-45 is the message the bot sends upon a new member joining. 
+Where:
 
-- The VERIFY_MESSAGE const at the top is *not* the same, but it is the string they must match perfectly to actually verify their account and get the role assigned. Can be anything you want, for example if you just want it to be the token with no message, simply edit `const VERIFY_MESSAGE = '{token}';`
+`welcomemsg:` the message to send on guild join
+`verifymsg:` the message that the users must type to gain the verified role - include the token here (see below)
+`completemsg:` the message sent upon successful verification
 
-- Just remember that when you edit the lines 37-45 or so with your message, to include what the member has to post to get verified. If you change the VERIFY_MESSAGE to '{token}', then you should say something like `Please post the following: {token}` or whatever you wish. If the user doesn't know what they need to do, then it will be obviously confusing!
+- The `verifymsg` can be edited, just remember this is what the string will be that the user must type. In the latter part of `verify.js`, there will be a `member.send(`Stuff here...`);` which I mention at the top of the file in a comment with instructions: 
 
-- Lastly, there are a few other strings that are minor. The `GAME_PLAYING` const at the top sets the game your bot will show as its playing status. The other few options include the short message sent after the user verifies succesfully (which is also commented in the `verify.js` file under the line starting `message.channel.send('Stuff here');` - and finally, there is a `const shortcode = shortcode(n) # n is 9 by default` which you don't have to touch, but it is commented for completeness, to set the length of the random token. By default it is 9 characters.  
+- The `verifymsg` const at the top is *not* the same, but it is the string they must match perfectly to actually verify their account and get the role assigned. Can be anything you want, for example if you just want it to be the token with no message, simply edit `const verifymsg = '{token}';`
+
+- Just remember that when you edit the welcomemsg (`const welcomemsg`) with your message, include what the member has to post to get verified. If you change the `verifymsg` to '{token}', then you should say something like `Please post the following: {token}` or whatever you wish. If the user doesn't know what they need to do, then it will be obviously confusing! The examples are in `verify.js` for you to see.
+
+> (2) You must also edit `config.json` accordingly. Specifically, you have to edit:
+
+```json
+
+{
+	"token": "",
+	"guild": "",
+	"role": "",
+	"playing": ""	
+}
+```
+
+Where:
+
+`token:` your bot's token.
+`guild:` the guild ID (not name) for the bot.
+`role:` the role ID (not name) for the bot to assign upon verification. **Must be a valid/active role, bot must have role-assign permissions.**
+`playing:` the game that the bot shows playing on Discord.
+
 
 - Save the changes and continue onwards.
 
@@ -179,7 +185,7 @@ Make sure the node version of pm2 is adequate. It is more than likely fine, but 
 
 - Use an editor (this is just a a few lines we will be needing, so I just do it with nano in the terminal) to edit the file.
 
-- I am using it on the latest node 7.9.0 - if you don't have this and wish to, again can use [nvm](http://nvm.sh) and do `nvm install v7.9.0` which will switch and install that node version for you.
+- I am using it on the latest node - if you don't have this and wish to, again can use [nvm](http://nvm.sh) and do `nvm install v9.5.0` which will switch and install that node version for you.
 
 
 ```json
@@ -208,12 +214,12 @@ NVM_DIR=/path/to/.nvm/ pm2 start verify.json
 # example output of which node with nvm
 
 vlexar@node1:~$ which node
-/home/vlexar/.nvm/versions/node/v7.9.0/bin/node
+/home/vlexar/.nvm/versions/node/v9.5.0/bin/node
 
 # or if you are running under the root user, it may look like
 
 root@lemp-512mb-nyc3-01:~# which node
-/root/.nvm/versions/node/v7.9.0/bin/node
+/root/.nvm/versions/node/v9.5.0/bin/node
 
 ```
 

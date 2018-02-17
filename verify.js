@@ -3,8 +3,6 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 
-
-
 const completemsg = `Thank you for agreeing to the rules and code of conduct! You are now a verified member of the guild! \nFeel free to choose what roles you’d like, introduce yourself or check out a our other channels. \n\n**Your unique token is your signature that you have read and understood our rules.**\n`
 
 const shortcode = (n) => {
@@ -13,7 +11,6 @@ const shortcode = (n) => {
   for (var i = 0; i < n + 1; i++) text += possible.charAt(Math.floor(Math.random() * possible.length))
   return text;
 }
-
 
 
 const client = new Discord.Client()
@@ -45,6 +42,7 @@ client.on('message', (message) => {
         })
   const role = client.guilds.get(config.guild).roles.get(config.role)
   client.guilds.get(config.guild).member(message.author.id).addRole(role).catch(console.error)
+  console.log(`TOKEN: ${message.author.token} :: Role ${config.role} added to member ${message.author.id}`)
 })
 
 
