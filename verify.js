@@ -28,11 +28,11 @@ client.on('guildMemberAdd', (member) => {
     member.user.token = token
 })
 
-const verifymsg = `I agree to abide by all rules. My token is ${token}.`
+const verifymsg = 'I agree to abide by all rules. My token is {token}.'
 
 client.on('message', (message) => {
     if (message.author.bot || !message.author.token || message.channel.type !== `dm`) return
-    if (message.content !== (verifymsg.replace(`${token}`, message.author.token))) return
+    if (message.content !== (verifymsg.replace('{token}', message.author.token))) return
     message.channel.send({
         embed: {
             color: Math.floor(Math.random() * (0xFFFFFF + 1)),
@@ -43,7 +43,7 @@ client.on('message', (message) => {
             }
         }
     })
-    client.guilds.get(config.guild).member(message.author).roles.add([config.role])
+    client.guilds.get(config.guild).member(message.author).roles.add(config.role) // ensure this is a string in the config ("")
         .then(console.log(`TOKEN: ${message.author.token} :: Role ${config.role} added to member ${message.author.id}`))
         .catch(console.error)
 })
