@@ -2,6 +2,8 @@
 
 > A simple yet functional [Discord](https://discordapp.com/) verification bot for new members. Please contact `.vlexar#0001` for help setting up this bot!
 
+> For macOS/Linux users: Running `wget https://cdn.jsdelivr.net/gh/shikhir-arora/basicverify/installer.sh` followed by `bash installer.sh` in your Terminal will download the bot files and install the node modules. I've had a few DM me so this is my solution To save time
+
 ---
 
 ## Screenshot In Action 
